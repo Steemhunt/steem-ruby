@@ -2,7 +2,7 @@ module Steem
   module Type
     
     # See: https://github.com/xeroc/piston-lib/blob/34a7525cee119ec9b24a99577ede2d54466fca0e/steembase/operations.py
-    class Amount < BaseType
+    class Amount
       attr_reader :amount, :precision, :nai, :asset
       
       def self.to_h(amount)
@@ -18,8 +18,6 @@ module Steem
       end
       
       def initialize(value)
-        super(:amount, value)
-        
         case value
         when Array
           @amount, @precision, @nai = value
